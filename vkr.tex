@@ -1,0 +1,25 @@
+% !TEX TS-program = xelatex
+% !TeX spellcheck = ru_RU
+
+\PassOptionsToPackage{draft,cache=false}{minted}
+\documentclass[14pt]{matmex-diploma-custom}
+\input{preamble}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\maketitle
+\hypersetup{pageanchor=true}
+
+\InputIfFileExists{abstract.tex}{}{}
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\InputIfFileExists{task.tex}{}{}
+\IfFileExists{related.tex}{%
+    \input{related}
+    \bibliographystyle{ugost2008ls}
+    \bibliography{related}
+}{}
+
+\end{document}
